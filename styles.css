@@ -1,0 +1,124 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+/* Animated Text */
+.animated-text {
+    font-size: 3rem;
+    color: #fff;
+    animation: bounce 2s infinite, colorChange 5s infinite;
+}
+
+.congrats-text {
+    font-size: 2rem;
+    color: #fff;
+    margin-top: 20px;
+    animation: float 3s infinite ease-in-out;
+}
+
+/* Keyframe Animations */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: #ff9a9e;
+    }
+    50% {
+        color: #fad0c4;
+    }
+    100% {
+        color: #ff9a9e;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Confetti Animation */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ffcc00;
+    top: -10px;
+    animation: confetti-fall 5s linear infinite;
+}
+
+.confetti:nth-child(2n) {
+    background-color: #ff6699;
+}
+
+.confetti:nth-child(3n) {
+    background-color: #66ccff;
+}
+
+.confetti:nth-child(4n) {
+    background-color: #99ff99;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+    }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .animated-text {
+        font-size: 2rem; /* Smaller font size for mobile */
+    }
+
+    .congrats-text {
+        font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+
+    .confetti {
+        width: 8px; /* Smaller confetti for mobile */
+        height: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .animated-text {
+        font-size: 1.5rem; /* Even smaller font size for very small screens */
+    }
+
+    .congrats-text {
+        font-size: 1.2rem; /* Even smaller font size for very small screens */
+    }
+
+    .confetti {
+        width: 6px; /* Smaller confetti for very small screens */
+        height: 6px;
+    }
+}
